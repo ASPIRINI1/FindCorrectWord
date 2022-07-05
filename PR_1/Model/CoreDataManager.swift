@@ -9,96 +9,76 @@ import Foundation
 import CoreData
 import UIKit
 
-class CoreDataManager{
+class CoreDataManager {
   
+    static let shared = CoreDataManager()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    private var model = [Words]()
+//    private var model = [Words]()
     
-    init() {
-        getAllItems()
-    }
-    
-    func getAllItems(){
-        do{
-            model = try context.fetch(Words.fetchRequest())
-            print(model.count, "Count")
-        } catch {
-            print("Getting error")
-        }
-    }
-    
-    func addItem(engText: String, rusText:String){
-        if engText != "" && rusText != ""{
-            let newItem = Words(context: context)
-            newItem.eng = engText
-            newItem.rus = rusText
-            
-            saveChanges()
-        } else {
-            print("Empty String")
-        }
-    }
-    
-    func deleteItem(itemIndex: Int){
-        context.delete(model[itemIndex])
-        do{
-            try context.save()
-        } catch {
-            print("Deleting error")
-        }
-        getAllItems()
+    private init() {
     }
     
     
-    func getAllWords() -> [Words]{
-        return model
-    }
+    //    MARK: - Managing words
     
-    func getKnownWords() -> [Words]{
-        var words = [Words]()
-        for word in model{
-            if word.known == true{
-                words.append(word)
-            }
-        }
-        return words
-    }
-    
-    func getUnKnownWords() -> [Words]{
-        var words = [Words]()
-        for word in model{
-            if word.known == false{
-                words.append(word)
-            }
-        }
-        return words
-    }
-    
-    func setKnown(engWord: String, known: Bool){
-        for word in model{
-            if word.eng == engWord{
-                word.known = known
-            }
-        }
+    func addWord(engText: String, rusText:String) {
+        
+        let newWord = Words(context: context)
+        newWord.eng = engText
+        newWord.rus = rusText
+        
         saveChanges()
-        getAllItems()
     }
     
-    func setDefault(){
-        for model in model {
-            model.known = false
-            model.rightSelection = 0
-        }
-       saveChanges()
+    func deleteWord(words: Words) {
+        context.delete(words)
+        
+        saveChanges()
     }
     
-    func saveChanges(){
-        do{
+    //    MARK: - Known/UnKnown words
+
+//    func getKnownWords() -> [Words] {
+//        
+//    }
+//
+//    func getUnKnownWords() -> [Words] {
+//        var words = [Words]()
+//        for word in model {
+//            if word.known == false {
+//                words.append(word)
+//            }
+//        }
+//        return words
+//    }
+//
+//    func setKnown(engWord: String, known: Bool) {
+//        for word in model {
+//            if word.eng == engWord{
+//                word.known = known
+//            }
+//        }
+//        saveChanges()
+//        getAllItems()
+//    }
+//
+////    MARK: - Additional funcs
+//
+//    func setDefault() {
+//        for model in model {
+//            model.known = false
+//            model.rightSelection = 0
+//        }
+//       saveChanges()
+//    }
+//
+    private func saveChanges() {
+        do {
             try context.save()
         } catch {
-            print("Saving error")
+            print("Saving error: ", error)
         }
     }
-  
+
 }
 

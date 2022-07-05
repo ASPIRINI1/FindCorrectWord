@@ -11,8 +11,6 @@ import CoreData
 class WordsTableVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    let coreData = CoreDataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +19,13 @@ class WordsTableVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        coreData.getAllItems()
+//        coreData.getAllItems()
         tableView.reloadData()
     }
     
     @IBAction func setDefaults(_ sender: Any) {
-        coreData.setDefault()
-        coreData.getAllItems()
+//        coreData.setDefault()
+//        coreData.getAllItems()
     }
     
 }
@@ -39,21 +37,22 @@ extension WordsTableVC: UITableViewDelegate, UITableViewDataSource{
     //MARK: DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coreData.getAllWords().count
+//        return coreData.getAllWords().count
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WordsTableCell", for: indexPath) as! WordSTableTableViewCell
 
-        cell.engLabel.text = coreData.getAllWords()[indexPath.row].eng
-        cell.rusLabel.text = coreData.getAllWords()[indexPath.row].rus
+//        cell.engLabel.text = coreData.getAllWords()[indexPath.row].eng
+//        cell.rusLabel.text = coreData.getAllWords()[indexPath.row].rus
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            coreData.deleteItem(itemIndex: indexPath.row)
+//            coreData.deleteItem(itemIndex: indexPath.row)
             tableView.reloadData()
         }
     }

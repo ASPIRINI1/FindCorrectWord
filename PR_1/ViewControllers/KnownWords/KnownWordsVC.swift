@@ -12,7 +12,6 @@ class KnownWordsVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let coreData = CoreDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +20,7 @@ class KnownWordsVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        coreData.getAllItems()
+//        coreData.getAllItems()
         tableView.reloadData()
     }
     
@@ -36,20 +35,21 @@ extension KnownWordsVC: UITableViewDelegate, UITableViewDataSource{
     //MARK: DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coreData.getKnownWords().count
+//        return coreData.getKnownWords().count
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "KnownWordsCell", for: indexPath) as! KnownWrodsTableViewCell
-            cell.rusLabel.text = coreData.getKnownWords()[indexPath.row].rus
-            cell.engLabel.text = coreData.getKnownWords()[indexPath.row].eng
+//            cell.rusLabel.text = coreData.getKnownWords()[indexPath.row].rus
+//            cell.engLabel.text = coreData.getKnownWords()[indexPath.row].eng
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let selectedCell = tableView.cellForRow(at: indexPath) as! KnownWrodsTableViewCell
         if editingStyle == .delete{
-            coreData.setKnown(engWord: selectedCell.engLabel.text ?? "nil", known: false)
+//            coreData.setKnown(engWord: selectedCell.engLabel.text ?? "nil", known: false)
             tableView.reloadData()
         }
     }

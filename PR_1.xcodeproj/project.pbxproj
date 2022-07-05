@@ -99,10 +99,10 @@
 		DEB9631227A83B410084ED7E /* PR_1 */ = {
 			isa = PBXGroup;
 			children = (
-				DEB9633127A844E90084ED7E /* Model */,
-				DEB9632A27A844590084ED7E /* ViewControllers */,
 				DEB9631327A83B410084ED7E /* AppDelegate.swift */,
 				DEB9631527A83B410084ED7E /* SceneDelegate.swift */,
+				DEB9633127A844E90084ED7E /* Model */,
+				DEB9632A27A844590084ED7E /* ViewControllers */,
 				DEB9631927A83B410084ED7E /* Main.storyboard */,
 				DEB9631F27A83B430084ED7E /* Assets.xcassets */,
 				DEB9632127A83B430084ED7E /* LaunchScreen.storyboard */,

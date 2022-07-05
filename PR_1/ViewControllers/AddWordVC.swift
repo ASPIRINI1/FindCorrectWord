@@ -13,8 +13,6 @@ class AddWordVC: UIViewController {
     @IBOutlet weak var engTextField: UITextField!
     @IBOutlet weak var rusTextField: UITextField!
     
-    let coreData = CoreDataManager()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -33,7 +31,7 @@ class AddWordVC: UIViewController {
         
         if (rusTextField.text != nil && engTextField.text != nil) && (rusTextField.text != "" && engTextField.text != ""){
             
-            coreData.addItem(engText: engTextField.text!, rusText: rusTextField.text!)
+            CoreDataManager.shared.addWord(engText: engText, rusText: rusText)
             
             let successAletr = UIAlertController(title: "Success", message: "Word added.", preferredStyle: .alert)
             successAletr.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
