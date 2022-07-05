@@ -35,7 +35,7 @@ class AddWordVC: UIViewController {
             
             coreData.addItem(engText: engTextField.text!, rusText: rusTextField.text!)
             
-            let successAletr = UIAlertController(title: "Добавление успешно", message: "Слово добавлено в архив слов.", preferredStyle: .alert)
+            let successAletr = UIAlertController(title: "Success", message: "Word added.", preferredStyle: .alert)
             successAletr.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(successAletr, animated: true, completion: nil)
             
@@ -43,7 +43,7 @@ class AddWordVC: UIViewController {
             rusTextField.text = ""
             
         } else {
-            let failAletr = UIAlertController(title: "Слово не добавлено", message: "Слово не может быть добавлено в архив слов. Проверьте правильность ввода.", preferredStyle: .alert)
+            let failAletr = UIAlertController(title: "Word not added", message: "Cant add word to dictionary.", preferredStyle: .alert)
             
             failAletr.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(failAletr, animated: true, completion: nil)

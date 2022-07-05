@@ -89,7 +89,7 @@ extension NewWordsVC: UITableViewDelegate, UITableViewDataSource{
             selectedCell.setCellColor(color: .red) {   }
             currectWord.rightSelection = 0
             
-            let alertController = UIAlertController(title: "Не верно", message: "Вы выбрали неправильное слово. Повторите попытку.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Wrond", message: "You chose the wrong word. Try again.", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                 selectedCell.backgroundColor = .white }))
             self.present(alertController, animated: true, completion: nil)
