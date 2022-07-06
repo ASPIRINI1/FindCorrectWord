@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="63R-Uq-GmW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="63R-Uq-GmW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Знакомые слова-->
+        <!--Known words-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="KnownWordsVC" customModule="PR_1" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,7 +87,7 @@
                             <constraint firstItem="U8S-M1-aR8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ucG-uy-kMb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Знакомые слова" id="mGW-ny-qD1"/>
+                    <navigationItem key="navigationItem" title="Known words" id="mGW-ny-qD1"/>
                     <connections>
                         <outlet property="tableView" destination="U8S-M1-aR8" id="o81-YK-YSv"/>
                     </connections>
@@ -116,7 +116,7 @@
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="90.401785714285708"/>
         </scene>
-        <!--Новые слова-->
+        <!--New words-->
         <scene sceneID="yfa-J0-ccn">
             <objects>
                 <viewController id="JJy-rI-GdK" customClass="NewWordsVC" customModule="PR_1" customModuleProvider="target" sceneMemberID="viewController">
@@ -195,7 +195,7 @@
                             <constraint firstItem="Iez-Tb-Kxe" firstAttribute="top" secondItem="t1j-ZT-Z4c" secondAttribute="top" id="gxW-x6-Kom"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Новые слова" id="L6G-Os-hFl">
+                    <navigationItem key="navigationItem" title="New words" id="L6G-Os-hFl">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="refresh" id="cca-Gs-xmk"/>
                     </navigationItem>
                     <connections>
@@ -249,13 +249,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3g-iC-2Xc">
-                                <rect key="frame" x="162.5" y="511" width="89" height="31"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Добавить"/>
+                                <rect key="frame" x="182" y="511" width="50" height="31"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add"/>
                                 <connections>
                                     <action selector="addButton:" destination="xoe-8m-Xo3" eventType="touchUpInside" id="qer-Fb-fII"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите новое слово по английски а затем по русски" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ms-eO-sPE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write new word" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ms-eO-sPE">
                                 <rect key="frame" x="50" y="124" width="314" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="MG7-Y5-yiq"/>
@@ -299,7 +299,7 @@
             </objects>
             <point key="canvasLocation" x="2810" y="90"/>
         </scene>
-        <!--Арихв слов-->
+        <!--Words dictionary-->
         <scene sceneID="tDN-I5-OFI">
             <objects>
                 <viewController id="4ZN-04-YZ2" customClass="WordsTableVC" customModule="PR_1" customModuleProvider="target" sceneMemberID="viewController">
@@ -378,7 +378,7 @@
                             <constraint firstItem="Yro-rZ-P0I" firstAttribute="top" secondItem="LWo-xc-f1B" secondAttribute="top" id="yLl-lH-5sB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Арихв слов" id="gh1-Dr-8bd">
+                    <navigationItem key="navigationItem" title="Words dictionary" id="gh1-Dr-8bd">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="6oN-m7-GPz">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="jdH-a5-Xnb">
                                 <rect key="frame" x="20" y="5" width="92" height="34.5"/>
@@ -408,7 +408,7 @@
         <scene sceneID="z2t-Se-Fs1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Ul-CW-THu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Архив слов" id="CKH-N0-vgP"/>
+                    <tabBarItem key="tabBarItem" title="Архив слов" image="text.book.closed" catalog="system" id="CKH-N0-vgP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vop-Ys-vdn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -427,7 +427,7 @@
         <scene sceneID="Rux-ij-Pog">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cWb-t0-USI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Новые слова" id="M2W-BQ-8ka"/>
+                    <tabBarItem key="tabBarItem" title="Новые слова" image="text.bubble" catalog="system" id="M2W-BQ-8ka"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HWl-Df-e4M">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -446,7 +446,7 @@
         <scene sceneID="lrB-Qz-vcP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kHr-E2-yms" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Знакомые слова" id="dcW-DO-yBR"/>
+                    <tabBarItem key="tabBarItem" title="Знакомые слова" image="book" catalog="system" id="dcW-DO-yBR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GJs-92-trl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -463,6 +463,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="text.book.closed" catalog="system" width="115" height="128"/>
+        <image name="text.bubble" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

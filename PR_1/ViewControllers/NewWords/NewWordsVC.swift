@@ -41,7 +41,7 @@ extension NewWordsVC: UITableViewDelegate, UITableViewDataSource{
 //            countOfUncorrectPairs = Int.random(in: 0...coreData.getUnKnownWords().count-1)
 //        }
 //        return coreData.getUnKnownWords().count
-        return CoreDataManager.shared.knownWordsCount()
+        return CoreDataManager.shared.countOfUnknownWords()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
