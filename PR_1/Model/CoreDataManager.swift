@@ -27,6 +27,7 @@ class CoreDataManager {
         newWord.eng = engText
         newWord.rus = rusText
         newWord.known = true
+        newWord.rightSelection = 0
         saveChanges()
     }
     
@@ -38,8 +39,21 @@ class CoreDataManager {
     
     func setKnown(id: NSManagedObjectID) {
         
-        guard let request = try? context.object(with: id) as? Word else { return }
+        guard let request = context.object(with: id) as? Word else { return }
         request.known = true
+        saveChanges()
+    }
+    
+    func setDefault() {
+        
+        guard let request = try? context.fetch(fetchRequest) else { print("Error getting words"); return }
+        
+        for word in request {
+            word.known = false
+            word.rightSelection = 0
+        }
+        
+        saveChanges()
     }
     
     
@@ -75,26 +89,6 @@ class CoreDataManager {
         return count
     }
     
-//    func getUnKnownWords() -> [Words] {
-//        var words = [Words]()
-//        for word in model {
-//            if word.known == false {
-//                words.append(word)
-//            }
-//        }
-//        return words
-//    }
-//
-//    func setKnown(engWord: String, known: Bool) {
-//        for word in model {
-//            if word.eng == engWord{
-//                word.known = known
-//            }
-//        }
-//        saveChanges()
-//        getAllItems()
-//    }
-//
 ////    MARK: - Additional funcs
 //
 //    func setDefault() {
