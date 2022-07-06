@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import CoreData
 
 class NewWordsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var rusLabel: UILabel!
     @IBOutlet weak var engLabel: UILabel!
+    var objectID = NSManagedObjectID()
     
     override func awakeFromNib() {
         super.awakeFromNib()

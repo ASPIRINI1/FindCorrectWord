@@ -41,7 +41,7 @@ extension NewWordsVC: UITableViewDelegate, UITableViewDataSource{
 //            countOfUncorrectPairs = Int.random(in: 0...coreData.getUnKnownWords().count-1)
 //        }
 //        return coreData.getUnKnownWords().count
-        return 0
+        return CoreDataManager.shared.knownWordsCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,6 +56,13 @@ extension NewWordsVC: UITableViewDelegate, UITableViewDataSource{
 //                cell.engLabel.text = coreData.getUnKnownWords()[Int.random(in: 0...coreData.getUnKnownWords().count-1)].eng
 //            }
 //        }
+        
+        guard let word = CoreDataManager.shared.getKnownWords(offset: indexPath.row).first else { return cell }
+
+        cell.engLabel.text = word.eng
+        cell.rusLabel.text = word.rus
+        cell.objectID = word.objectID
+        
         return cell
     }
     
@@ -64,7 +71,7 @@ extension NewWordsVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let selectedCell = tableView.cellForRow(at: indexPath) as! NewWordsTableViewCell
-        var currectWord = Words()
+        var currectWord = Word()
         
 //        for word in coreData.getUnKnownWords(){
 //            if selectedCell.engLabel.text == word.eng{

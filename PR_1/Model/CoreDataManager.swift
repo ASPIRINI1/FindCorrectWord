@@ -13,7 +13,7 @@ class CoreDataManager {
   
     static let shared = CoreDataManager()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//    private var model = [Words]()
+    private let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
     
     private init() {
     }
@@ -23,25 +23,58 @@ class CoreDataManager {
     
     func addWord(engText: String, rusText:String) {
         
-        let newWord = Words(context: context)
+        let newWord = Word(context: context)
         newWord.eng = engText
         newWord.rus = rusText
-        
+        newWord.known = true
         saveChanges()
     }
     
-    func deleteWord(words: Words) {
+    func deleteWord(words: Word) {
         context.delete(words)
         
         saveChanges()
     }
     
+    func setKnown(id: NSManagedObjectID) {
+        
+        guard let request = try? context.object(with: id) as? Word else { return }
+        request.known = true
+    }
+    
+    
     //    MARK: - Known/UnKnown words
 
-//    func getKnownWords() -> [Words] {
-//        
-//    }
-//
+    func getKnownWords(offset: Int) -> [Word] {
+
+        fetchRequest.fetchLimit = 1
+        fetchRequest.fetchOffset = offset
+        fetchRequest.predicate = NSPredicate(format: "known != %@", "false")
+        guard let request = try? context.fetch(fetchRequest) else { print("Error getting words"); return [] }
+        return request
+    }
+    
+    func countOfknownWords() -> Int {
+        
+        guard let count = try? context.count(for: fetchRequest) else { print("Getting count error "); return 0 }
+        return count
+    }
+    
+    func getUnknownWords(offset: Int) -> [Word] {
+
+        fetchRequest.fetchLimit = 1
+        fetchRequest.fetchOffset = offset
+        fetchRequest.predicate = NSPredicate(format: "known != %@", "false")
+        guard let request = try? context.fetch(fetchRequest) else { print("Error getting words"); return [] }
+        return request
+    }
+    
+    func countOfUnknownWords() -> Int {
+        
+        guard let count = try? context.count(for: fetchRequest) else { print("Getting count error "); return 0 }
+        return count
+    }
+    
 //    func getUnKnownWords() -> [Words] {
 //        var words = [Words]()
 //        for word in model {
