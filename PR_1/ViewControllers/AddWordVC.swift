@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class AddWordVC: UIViewController {
 
@@ -29,7 +28,7 @@ class AddWordVC: UIViewController {
         engTextField.text = engText.filter { engCharacters.contains($0) }
         rusTextField.text = rusText.filter { rusCharacters.contains($0) }
         
-        if (rusTextField.text != nil && engTextField.text != nil) && (rusTextField.text != "" && engTextField.text != ""){
+        if rusTextField.text != "" && engTextField.text != "" {
             
             CoreDataManager.shared.addWord(engText: engText, rusText: rusText)
             
