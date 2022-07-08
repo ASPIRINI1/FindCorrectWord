@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE718964287852F7001AEDE9 /* NewWordsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE718963287852F7001AEDE9 /* NewWordsTableVC.swift */; };
 		DE718966287855FB001AEDE9 /* KnownWordsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE718965287855FB001AEDE9 /* KnownWordsTableVC.swift */; };
+		DE71896828788A22001AEDE9 /* WordsTableTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71896728788A22001AEDE9 /* WordsTableTableVC.swift */; };
 		DE90FEC527AB01CC00EE2698 /* NewWordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE90FEC427AB01CC00EE2698 /* NewWordsTableViewCell.swift */; };
 		DE90FEC727AB02D400EE2698 /* KnownWrodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE90FEC627AB02D400EE2698 /* KnownWrodsTableViewCell.swift */; };
 		DEB9631427A83B410084ED7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9631327A83B410084ED7E /* AppDelegate.swift */; };
@@ -17,7 +18,6 @@
 		DEB9631E27A83B410084ED7E /* PR_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEB9631C27A83B410084ED7E /* PR_1.xcdatamodeld */; };
 		DEB9632027A83B430084ED7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB9631F27A83B430084ED7E /* Assets.xcassets */; };
 		DEB9632327A83B430084ED7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB9632127A83B430084ED7E /* LaunchScreen.storyboard */; };
-		DEB9632E27A844C10084ED7E /* WordsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9632D27A844C10084ED7E /* WordsTableVC.swift */; };
 		DEB9633527A8454E0084ED7E /* AddWordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9633427A8454E0084ED7E /* AddWordVC.swift */; };
 		DEB9633727A847F60084ED7E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9633627A847F60084ED7E /* CoreDataManager.swift */; };
 		DEDA187427A9CCAB00764B04 /* WordSTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDA187327A9CCAB00764B04 /* WordSTableTableViewCell.swift */; };
@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		DE718963287852F7001AEDE9 /* NewWordsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordsTableVC.swift; sourceTree = "<group>"; };
 		DE718965287855FB001AEDE9 /* KnownWordsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KnownWordsTableVC.swift; path = PR_1/ViewControllers/KnownWords/KnownWordsTableVC.swift; sourceTree = SOURCE_ROOT; };
+		DE71896728788A22001AEDE9 /* WordsTableTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsTableTableVC.swift; sourceTree = "<group>"; };
 		DE90FEC427AB01CC00EE2698 /* NewWordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordsTableViewCell.swift; sourceTree = "<group>"; };
 		DE90FEC627AB02D400EE2698 /* KnownWrodsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownWrodsTableViewCell.swift; sourceTree = "<group>"; };
 		DEB9631027A83B410084ED7E /* PR_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PR_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,7 +37,6 @@
 		DEB9631F27A83B430084ED7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEB9632227A83B430084ED7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEB9632427A83B430084ED7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DEB9632D27A844C10084ED7E /* WordsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsTableVC.swift; sourceTree = "<group>"; };
 		DEB9633427A8454E0084ED7E /* AddWordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordVC.swift; sourceTree = "<group>"; };
 		DEB9633627A847F60084ED7E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DEDA187327A9CCAB00764B04 /* WordSTableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSTableTableViewCell.swift; sourceTree = "<group>"; };
@@ -56,8 +56,8 @@
 		DE90FEC127AB014700EE2698 /* KnownWords */ = {
 			isa = PBXGroup;
 			children = (
-				DE90FEC627AB02D400EE2698 /* KnownWrodsTableViewCell.swift */,
 				DE718965287855FB001AEDE9 /* KnownWordsTableVC.swift */,
+				DE90FEC627AB02D400EE2698 /* KnownWrodsTableViewCell.swift */,
 			);
 			path = KnownWords;
 			sourceTree = "<group>";
@@ -65,7 +65,7 @@
 		DE90FEC227AB016E00EE2698 /* WordsTable */ = {
 			isa = PBXGroup;
 			children = (
-				DEB9632D27A844C10084ED7E /* WordsTableVC.swift */,
+				DE71896728788A22001AEDE9 /* WordsTableTableVC.swift */,
 				DEDA187327A9CCAB00764B04 /* WordSTableTableViewCell.swift */,
 			);
 			path = WordsTable;
@@ -74,8 +74,8 @@
 		DE90FEC327AB01B600EE2698 /* NewWords */ = {
 			isa = PBXGroup;
 			children = (
-				DE90FEC427AB01CC00EE2698 /* NewWordsTableViewCell.swift */,
 				DE718963287852F7001AEDE9 /* NewWordsTableVC.swift */,
+				DE90FEC427AB01CC00EE2698 /* NewWordsTableViewCell.swift */,
 			);
 			path = NewWords;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB9633527A8454E0084ED7E /* AddWordVC.swift in Sources */,
-				DEB9632E27A844C10084ED7E /* WordsTableVC.swift in Sources */,
+				DE71896828788A22001AEDE9 /* WordsTableTableVC.swift in Sources */,
 				DEB9631427A83B410084ED7E /* AppDelegate.swift in Sources */,
 				DE90FEC527AB01CC00EE2698 /* NewWordsTableViewCell.swift in Sources */,
 				DEB9631627A83B410084ED7E /* SceneDelegate.swift in Sources */,

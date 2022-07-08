@@ -16,6 +16,9 @@ class AddWordVC: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func closeButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func addButton(_ sender: Any) {
         
@@ -38,6 +41,7 @@ class AddWordVC: UIViewController {
             
             engTextField.text = ""
             rusTextField.text = ""
+            navigationController?.popViewController(animated: true)
             
         } else {
             let failAletr = UIAlertController(title: "Word not added", message: "Cant add word to dictionary.", preferredStyle: .alert)
