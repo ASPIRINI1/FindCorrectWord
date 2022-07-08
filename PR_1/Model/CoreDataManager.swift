@@ -89,16 +89,8 @@ class CoreDataManager {
         return count
     }
     
-////    MARK: - Additional funcs
-//
-//    func setDefault() {
-//        for model in model {
-//            model.known = false
-//            model.rightSelection = 0
-//        }
-//       saveChanges()
-//    }
-//
+//  MARK: - Additional funcs
+
     private func saveChanges() {
         do {
             try context.save()
