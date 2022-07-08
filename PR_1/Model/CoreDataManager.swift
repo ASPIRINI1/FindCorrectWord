@@ -31,8 +31,8 @@ class CoreDataManager {
         saveChanges()
     }
     
-    func deleteWord(words: Word) {
-        context.delete(words)
+    func deleteWord(objectID: NSManagedObjectID) {
+        context.delete(context.object(with: objectID))
         
         saveChanges()
     }

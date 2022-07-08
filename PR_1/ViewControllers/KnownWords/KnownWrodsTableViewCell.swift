@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import CoreData
 
 class KnownWrodsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var rusLabel: UILabel!
     @IBOutlet weak var engLabel: UILabel!
-    
+    var objectID = NSManagedObjectID()
     
     override func awakeFromNib() {
         super.awakeFromNib()
