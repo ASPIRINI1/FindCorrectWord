@@ -125,6 +125,26 @@ class CoreDataManager {
             print("Saving error: ", error)
         }
     }
+    
+    func addTenWords() {
+        
+        if countOfknownWords() + countOfNewWords() > 0 { return }
+        
+        let words = ["word" : "слово",
+                     "sun" : "солнце",
+                     "water" : "вода",
+                     "weather" : "погода",
+                     "car" : "машина",
+                     "city" : "город",
+                     "learn" : "учить",
+                     "run" : "бежать",
+                     "walk" : "прогулка",
+                     "swim" : "плавать"]
+        
+        for word in words {
+            addWord(engText: word.key, rusText: word.value)
+        }
+    }
 
 }
 
