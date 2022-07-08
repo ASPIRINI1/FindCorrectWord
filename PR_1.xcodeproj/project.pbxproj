@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE718964287852F7001AEDE9 /* NewWordsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE718963287852F7001AEDE9 /* NewWordsTableVC.swift */; };
+		DE718966287855FB001AEDE9 /* KnownWordsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE718965287855FB001AEDE9 /* KnownWordsTableVC.swift */; };
 		DE90FEC527AB01CC00EE2698 /* NewWordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE90FEC427AB01CC00EE2698 /* NewWordsTableViewCell.swift */; };
 		DE90FEC727AB02D400EE2698 /* KnownWrodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE90FEC627AB02D400EE2698 /* KnownWrodsTableViewCell.swift */; };
 		DEB9631427A83B410084ED7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9631327A83B410084ED7E /* AppDelegate.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE718963287852F7001AEDE9 /* NewWordsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordsTableVC.swift; sourceTree = "<group>"; };
+		DE718965287855FB001AEDE9 /* KnownWordsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KnownWordsTableVC.swift; path = PR_1/ViewControllers/KnownWords/KnownWordsTableVC.swift; sourceTree = SOURCE_ROOT; };
 		DE90FEC427AB01CC00EE2698 /* NewWordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordsTableViewCell.swift; sourceTree = "<group>"; };
 		DE90FEC627AB02D400EE2698 /* KnownWrodsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownWrodsTableViewCell.swift; sourceTree = "<group>"; };
 		DEB9631027A83B410084ED7E /* PR_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PR_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +62,7 @@
 			children = (
 				DEB9632F27A844DC0084ED7E /* KnownWordsVC.swift */,
 				DE90FEC627AB02D400EE2698 /* KnownWrodsTableViewCell.swift */,
+				DE718965287855FB001AEDE9 /* KnownWordsTableVC.swift */,
 			);
 			path = KnownWords;
 			sourceTree = "<group>";
@@ -76,6 +81,7 @@
 			children = (
 				DEB9632B27A844A90084ED7E /* NewWordsVC.swift */,
 				DE90FEC427AB01CC00EE2698 /* NewWordsTableViewCell.swift */,
+				DE718963287852F7001AEDE9 /* NewWordsTableVC.swift */,
 			);
 			path = NewWords;
 			sourceTree = "<group>";
@@ -211,7 +217,9 @@
 				DEB9633727A847F60084ED7E /* CoreDataManager.swift in Sources */,
 				DEDA187427A9CCAB00764B04 /* WordSTableTableViewCell.swift in Sources */,
 				DEB9631E27A83B410084ED7E /* PR_1.xcdatamodeld in Sources */,
+				DE718966287855FB001AEDE9 /* KnownWordsTableVC.swift in Sources */,
 				DE90FEC727AB02D400EE2698 /* KnownWrodsTableViewCell.swift in Sources */,
+				DE718964287852F7001AEDE9 /* NewWordsTableVC.swift in Sources */,
 				DEB9632C27A844A90084ED7E /* NewWordsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
