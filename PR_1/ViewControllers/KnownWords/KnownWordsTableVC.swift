@@ -13,7 +13,7 @@ class KnownWordsTableVC: UITableViewController {
         super.viewDidLoad()
     }
  
-    //MARK: DataSource
+//MARK: - DataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CoreDataManager.shared.countOfknownWords()
@@ -32,15 +32,16 @@ class KnownWordsTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         let selectedCell = tableView.cellForRow(at: indexPath) as! KnownWrodsTableViewCell
-        if editingStyle == .delete{
-            CoreDataManager.shared.deleteWord(objectID: selectedCell.objectID)
+        if editingStyle == .delete {
+            CoreDataManager.shared.setKnown(id: selectedCell.objectID)
             tableView.reloadData()
         }
     }
     
     
-    //MARK: Delagate
+//MARK: - Delagate
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
