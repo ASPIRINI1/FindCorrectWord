@@ -59,12 +59,12 @@ class CoreDataManager {
     
     //    MARK: - Known/UnKnown words
 
-    func getKnownWords(offset: Int) -> [Word] {
+    func getKnownWords(offset: Int) -> Word? {
 
         fetchRequest.fetchLimit = 1
         fetchRequest.fetchOffset = offset
         fetchRequest.predicate = NSPredicate(format: "known != %@", "false")
-        guard let request = try? context.fetch(fetchRequest) else { print("Error getting words"); return [] }
+        guard let request = try? context.fetch(fetchRequest).first else { print("Error getting words"); return Word() }
         return request
     }
     
@@ -74,12 +74,12 @@ class CoreDataManager {
         return count
     }
     
-    func getUnknownWords(offset: Int) -> [Word] {
+    func getUnknownWords(offset: Int) -> Word? {
 
         fetchRequest.fetchLimit = 1
         fetchRequest.fetchOffset = offset
         fetchRequest.predicate = NSPredicate(format: "known != %@", "false")
-        guard let request = try? context.fetch(fetchRequest) else { print("Error getting words"); return [] }
+        guard let request = try? context.fetch(fetchRequest).first else { print("Error getting words"); return Word() }
         return request
     }
     

@@ -57,7 +57,7 @@ extension NewWordsVC: UITableViewDelegate, UITableViewDataSource{
 //            }
 //        }
         
-        guard let word = CoreDataManager.shared.getKnownWords(offset: indexPath.row).first else { return cell }
+        guard let word = CoreDataManager.shared.getKnownWords(offset: indexPath.row) else { return cell }
 
         cell.engLabel.text = word.eng
         cell.rusLabel.text = word.rus
