@@ -27,7 +27,7 @@ class NewWordsTableVC: UITableViewController {
 //            countOfUncorrectPairs = Int.random(in: 0...coreData.getUnKnownWords().count-1)
 //        }
 //        return coreData.getUnKnownWords().count
-        return CoreDataManager.shared.countOfUnknownWords()
+        return CoreDataManager.shared.countOfNewWords()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,7 +43,7 @@ class NewWordsTableVC: UITableViewController {
 //            }
 //        }
         
-        guard let word = CoreDataManager.shared.getUnknownWords(offset: indexPath.row) else { return cell }
+        guard let word = CoreDataManager.shared.getNewWords(offset: indexPath.row) else { return cell }
 
         cell.engLabel.text = word.eng
         cell.rusLabel.text = word.rus

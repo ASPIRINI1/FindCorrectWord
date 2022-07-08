@@ -17,9 +17,7 @@
 		DEB9631E27A83B410084ED7E /* PR_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEB9631C27A83B410084ED7E /* PR_1.xcdatamodeld */; };
 		DEB9632027A83B430084ED7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB9631F27A83B430084ED7E /* Assets.xcassets */; };
 		DEB9632327A83B430084ED7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB9632127A83B430084ED7E /* LaunchScreen.storyboard */; };
-		DEB9632C27A844A90084ED7E /* NewWordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9632B27A844A90084ED7E /* NewWordsVC.swift */; };
 		DEB9632E27A844C10084ED7E /* WordsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9632D27A844C10084ED7E /* WordsTableVC.swift */; };
-		DEB9633027A844DC0084ED7E /* KnownWordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9632F27A844DC0084ED7E /* KnownWordsVC.swift */; };
 		DEB9633527A8454E0084ED7E /* AddWordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9633427A8454E0084ED7E /* AddWordVC.swift */; };
 		DEB9633727A847F60084ED7E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9633627A847F60084ED7E /* CoreDataManager.swift */; };
 		DEDA187427A9CCAB00764B04 /* WordSTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDA187327A9CCAB00764B04 /* WordSTableTableViewCell.swift */; };
@@ -38,9 +36,7 @@
 		DEB9631F27A83B430084ED7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEB9632227A83B430084ED7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEB9632427A83B430084ED7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DEB9632B27A844A90084ED7E /* NewWordsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordsVC.swift; sourceTree = "<group>"; };
 		DEB9632D27A844C10084ED7E /* WordsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsTableVC.swift; sourceTree = "<group>"; };
-		DEB9632F27A844DC0084ED7E /* KnownWordsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownWordsVC.swift; sourceTree = "<group>"; };
 		DEB9633427A8454E0084ED7E /* AddWordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordVC.swift; sourceTree = "<group>"; };
 		DEB9633627A847F60084ED7E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DEDA187327A9CCAB00764B04 /* WordSTableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSTableTableViewCell.swift; sourceTree = "<group>"; };
@@ -60,7 +56,6 @@
 		DE90FEC127AB014700EE2698 /* KnownWords */ = {
 			isa = PBXGroup;
 			children = (
-				DEB9632F27A844DC0084ED7E /* KnownWordsVC.swift */,
 				DE90FEC627AB02D400EE2698 /* KnownWrodsTableViewCell.swift */,
 				DE718965287855FB001AEDE9 /* KnownWordsTableVC.swift */,
 			);
@@ -79,7 +74,6 @@
 		DE90FEC327AB01B600EE2698 /* NewWords */ = {
 			isa = PBXGroup;
 			children = (
-				DEB9632B27A844A90084ED7E /* NewWordsVC.swift */,
 				DE90FEC427AB01CC00EE2698 /* NewWordsTableViewCell.swift */,
 				DE718963287852F7001AEDE9 /* NewWordsTableVC.swift */,
 			);
@@ -211,7 +205,6 @@
 				DEB9633527A8454E0084ED7E /* AddWordVC.swift in Sources */,
 				DEB9632E27A844C10084ED7E /* WordsTableVC.swift in Sources */,
 				DEB9631427A83B410084ED7E /* AppDelegate.swift in Sources */,
-				DEB9633027A844DC0084ED7E /* KnownWordsVC.swift in Sources */,
 				DE90FEC527AB01CC00EE2698 /* NewWordsTableViewCell.swift in Sources */,
 				DEB9631627A83B410084ED7E /* SceneDelegate.swift in Sources */,
 				DEB9633727A847F60084ED7E /* CoreDataManager.swift in Sources */,
@@ -220,7 +213,6 @@
 				DE718966287855FB001AEDE9 /* KnownWordsTableVC.swift in Sources */,
 				DE90FEC727AB02D400EE2698 /* KnownWrodsTableViewCell.swift in Sources */,
 				DE718964287852F7001AEDE9 /* NewWordsTableVC.swift in Sources */,
-				DEB9632C27A844A90084ED7E /* NewWordsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
