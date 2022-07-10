@@ -17,7 +17,7 @@ class AddWordVC: UIViewController {
     }
     
     @IBAction func closeButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     @IBAction func addButton(_ sender: Any) {
