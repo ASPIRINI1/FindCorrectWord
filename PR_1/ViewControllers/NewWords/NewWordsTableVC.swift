@@ -9,8 +9,6 @@ import UIKit
 
 class NewWordsTableVC: UITableViewController {
     
-    var countOfUncorrectPairs = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -23,30 +21,21 @@ class NewWordsTableVC: UITableViewController {
     //MARK: DataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if coreData.getUnKnownWords().count > 0 {
-//            countOfUncorrectPairs = Int.random(in: 0...coreData.getUnKnownWords().count-1)
-//        }
-//        return coreData.getUnKnownWords().count
         return CoreDataManager.shared.countOfNewWords()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewWordsCell", for: indexPath) as! NewWordsTableViewCell
-
-//        if countOfUncorrectPairs > 1{
-//            if  Int.random(in: 0...2) == 0 {
-//                cell.rusLabel.text = coreData.getUnKnownWords()[indexPath.row].rus
-//                cell.engLabel.text = coreData.getUnKnownWords()[indexPath.row].eng
-//            } else {
-//                cell.rusLabel.text = coreData.getUnKnownWords()[Int.random(in: 0...coreData.getUnKnownWords().count-1)].rus
-//                cell.engLabel.text = coreData.getUnKnownWords()[Int.random(in: 0...coreData.getUnKnownWords().count-1)].eng
-//            }
-//        }
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewWordsCell", for: indexPath) as! NewWordsTableViewCell
         guard let word = CoreDataManager.shared.getNewWords(offset: indexPath.row) else { return cell }
+        
+        if CoreDataManager.shared.countOfNewWords() > indexPath.row {
+            cell.rusLabel.text = CoreDataManager.shared.getNewWords(offset: Int.random(in: 0...indexPath.row))?.rus
+        } else {
+            cell.rusLabel.text = word.rus
+        }
 
         cell.engLabel.text = word.eng
-        cell.rusLabel.text = word.rus
         cell.objectID = word.objectID
         
         return cell
@@ -57,38 +46,27 @@ class NewWordsTableVC: UITableViewController {
         
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
-            let selectedCell = tableView.cellForRow(at: indexPath) as! NewWordsTableViewCell
-            var currectWord = Word()
-            
-    //        for word in coreData.getUnKnownWords(){
-    //            if selectedCell.engLabel.text == word.eng{
-    //                currectWord = word
-    //            }
-    //        }
-            
-    //        if selectedCell.rusLabel.text == currectWord.rus {
-    //            currectWord.rightSelection += 1
-    //            coreData.saveChanges()
-    //
-    //            selectedCell.setCellColor(color: .green) {
-    //                tableView.reloadData()
-    //            }
-    //
-    //            if currectWord.rightSelection == 3 {
-    //                coreData.setKnown(engWord: selectedCell.engLabel.text ?? "nil", known: true)
-    //                tableView.reloadData()
-    //            }
-    //
-    //        } else {
-    //            selectedCell.setCellColor(color: .red) {   }
-    //            currectWord.rightSelection = 0
-    //
-    //            let alertController = UIAlertController(title: "Wrond", message: "You chose the wrong word. Try again.", preferredStyle: .alert)
-    //            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-    //                selectedCell.backgroundColor = .white }))
-    //            self.present(alertController, animated: true, completion: nil)
-    //        }
+        guard let selectedCell = tableView.cellForRow(at: indexPath) as? NewWordsTableViewCell else { return }
+        guard let engCellText = selectedCell.engLabel.text else { return }
+        guard let rusCellText = selectedCell.rusLabel.text else { return }
+        guard let engWord = CoreDataManager.shared.getNewWords(offset: indexPath.row)?.eng else { return }
+        guard let rusWord = CoreDataManager.shared.getNewWords(offset: indexPath.row)?.rus else { return }
+        
+        if engWord == engCellText && rusWord == rusCellText {
+            selectedCell.setCellColor(color: .green) {
+                CoreDataManager.shared.setWordGuessed(objectID: selectedCell.objectID)
+                tableView.reloadData()
+            }
+        } else {
+            selectedCell.setCellColor(color: .red) {
+                tableView.reloadData()
+                let alertController = UIAlertController(title: "Wrong!", message: "You chose the wrong word. Try again.", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                        selectedCell.backgroundColor = .white }))
+                    self.present(alertController, animated: true, completion: nil)
+            }
         }
+    }
 
 }
 

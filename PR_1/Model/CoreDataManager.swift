@@ -26,19 +26,32 @@ class CoreDataManager {
         newWord.rus = rusText
         newWord.known = false
         newWord.rightSelection = 0
+        
         saveChanges()
     }
     
     func deleteWord(objectID: NSManagedObjectID) {
-        context.delete(context.object(with: objectID))
         
+        context.delete(context.object(with: objectID))
         saveChanges()
     }
     
-    func setKnown(id: NSManagedObjectID) {
+//    func setKnown(id: NSManagedObjectID) {
+//
+//        guard let request = context.object(with: id) as? Word else { return }
+//        request.known = true
+//        saveChanges()
+//    }
+    
+    func setWordGuessed(objectID: NSManagedObjectID) {
         
-        guard let request = context.object(with: id) as? Word else { return }
-        request.known = true
+        guard let word = context.object(with: objectID) as? Word else { return }
+        word.rightSelection += 1
+        
+        if word.rightSelection >= 3 {
+            word.known = true
+        }
+        
         saveChanges()
     }
     
@@ -56,7 +69,7 @@ class CoreDataManager {
     }
     
     
-    //    MARK: - Known/UnKnown words
+    //    MARK: - Get words
 
     func getKnownWords(offset: Int) -> Word? {
 

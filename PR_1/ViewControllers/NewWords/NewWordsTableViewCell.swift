@@ -29,6 +29,7 @@ class NewWordsTableViewCell: UITableViewCell {
             self.backgroundColor = color
             Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { t in
                 self.backgroundColor = .white
+                self.isSelected = false
                 completion()
             }
     }
