@@ -3,7 +3,7 @@
     <entity name="Word" representedClassName="Word" syncable="YES" codeGenerationType="class">
         <attribute name="eng" attributeType="String"/>
         <attribute name="known" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
-        <attribute name="rightSelection" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rightSelection" optional="YES" attributeType="Integer 64" minValueString="0" maxValueString="3" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="rus" attributeType="String"/>
     </entity>
     <elements>

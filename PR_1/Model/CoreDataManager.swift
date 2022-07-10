@@ -41,6 +41,7 @@ class CoreDataManager {
     func setUnknown(id: NSManagedObjectID) {
 
         guard let request = context.object(with: id) as? Word else { return }
+        request.rightSelection = 0
         request.known = false
         saveChanges()
         NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
