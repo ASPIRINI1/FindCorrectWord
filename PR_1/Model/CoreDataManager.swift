@@ -28,28 +28,32 @@ class CoreDataManager {
         newWord.rightSelection = 0
         
         saveChanges()
+        NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
     }
     
     func deleteWord(objectID: NSManagedObjectID) {
         
         context.delete(context.object(with: objectID))
         saveChanges()
+        NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
     }
     
-//    func setKnown(id: NSManagedObjectID) {
-//
-//        guard let request = context.object(with: id) as? Word else { return }
-//        request.known = true
-//        saveChanges()
-//    }
+    func setUnknown(id: NSManagedObjectID) {
+
+        guard let request = context.object(with: id) as? Word else { return }
+        request.known = false
+        saveChanges()
+        NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
+    }
     
-    func setWordGuessed(objectID: NSManagedObjectID) {
+    func setWordRigthSelection(objectID: NSManagedObjectID) {
         
         guard let word = context.object(with: objectID) as? Word else { return }
         word.rightSelection += 1
         
         if word.rightSelection >= 3 {
             word.known = true
+            NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
         }
         
         saveChanges()
@@ -66,6 +70,7 @@ class CoreDataManager {
         }
         
         saveChanges()
+        NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
     }
     
     

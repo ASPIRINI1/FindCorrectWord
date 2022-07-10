@@ -281,6 +281,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="All unknown"/>
+                                <connections>
+                                    <action selector="setDefault:" destination="rD3-U7-y6C" eventType="touchUpInside" id="xL2-mE-8ry"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="v0V-FQ-z2c">

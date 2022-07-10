@@ -11,6 +11,13 @@ class KnownWordsTableVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("Update"), object: nil, queue: nil) { _ in
+            self.tableView.reloadData()
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
  
 //MARK: - DataSource
@@ -35,7 +42,7 @@ class KnownWordsTableVC: UITableViewController {
         
         let selectedCell = tableView.cellForRow(at: indexPath) as! KnownWrodsTableViewCell
         if editingStyle == .delete {
-            CoreDataManager.shared.setKnown(id: selectedCell.objectID)
+            CoreDataManager.shared.setUnknown(id: selectedCell.objectID)
             tableView.reloadData()
         }
     }

@@ -11,14 +11,17 @@ class WordsTableTableVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("Update"), object: nil, queue: nil) { _ in
+            self.tableView.reloadData()
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @IBAction func setDefault(_ sender: Any) {
         CoreDataManager.shared.setDefault()
-    }
-    
-    @IBAction func closeButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
     
 //MARK: - DataSource

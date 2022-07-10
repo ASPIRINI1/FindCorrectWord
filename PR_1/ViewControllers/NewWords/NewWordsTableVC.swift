@@ -11,6 +11,13 @@ class NewWordsTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("Update"), object: nil, queue: nil) { _ in
+            self.tableView.reloadData()
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @IBAction func refreshNavBarButton(_ sender: Any) {
@@ -54,7 +61,7 @@ class NewWordsTableVC: UITableViewController {
         
         if engWord == engCellText && rusWord == rusCellText {
             selectedCell.setCellColor(color: .green) {
-                CoreDataManager.shared.setWordGuessed(objectID: selectedCell.objectID)
+                CoreDataManager.shared.setWordRigthSelection(objectID: selectedCell.objectID)
                 tableView.reloadData()
             }
         } else {
