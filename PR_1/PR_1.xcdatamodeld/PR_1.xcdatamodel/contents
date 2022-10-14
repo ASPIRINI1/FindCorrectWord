@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Word" representedClassName="Word" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Word" representedClassName="Word" syncable="YES">
         <attribute name="eng" attributeType="String"/>
-        <attribute name="known" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
-        <attribute name="rightSelection" optional="YES" attributeType="Integer 64" minValueString="0" maxValueString="3" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="known" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="rightSelection" attributeType="Integer 64" minValueString="0" maxValueString="3" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="rus" attributeType="String"/>
     </entity>
-    <elements>
-        <element name="Word" positionX="-63" positionY="-18" width="128" height="89"/>
-    </elements>
 </model>
